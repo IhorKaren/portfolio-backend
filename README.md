@@ -1,6 +1,4 @@
-# Node.js TaskPro
-
-This is the backend for interacting with the Mongo database, including authorization, changing the data and avatar of an authorized user, sending an email to the support address, and working with a complex table object.
+# Node.js Portfolio
 
 ## Comands:
 
