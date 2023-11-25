@@ -1,7 +1,7 @@
 const { ctrlWrapper } = require("../../helpers");
 
-const { addProject } = require("./addProject");
+const { getAllProjects } = require("./getAllProjects");
 
 module.exports = {
-  addProject: ctrlWrapper(addProject),
+  getAllProjects: ctrlWrapper(getAllProjects),
 };

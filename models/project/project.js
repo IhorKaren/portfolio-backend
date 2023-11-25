@@ -20,16 +20,20 @@ const projectSchema = new Schema(
       required: true,
     },
     tags: {
-      type: String,
+      type: [String],
       enum: [
         "HTML",
-        "CSS",
+        "SASS",
         "JavaScript",
         "TypeScript",
         "React",
         "Next.js",
         "Node.js",
       ],
+    },
+    links: {
+      repository: String,
+      livepage: String,
     },
   },
   { versionKey: false, timestamps: true }
