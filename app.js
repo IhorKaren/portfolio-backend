@@ -5,7 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const projectsRouter = require("./routes/api/projectsRouter");
-const cvRouter = require("./routes/api/cvRouter");
+const resumeRouter = require("./routes/api/resumeRouter");
 
 const app = express();
 
@@ -16,7 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/projects", projectsRouter);
-app.use("/cv", cvRouter);
+app.use("/cv", resumeRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });

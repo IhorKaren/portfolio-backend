@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const cvSchema = new Schema(
+const resumeSchema = new Schema(
   {
     link: {
       type: String,
@@ -10,8 +10,8 @@ const cvSchema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
-const Cv = model("cv", cvSchema);
+const Resume = model("cv", resumeSchema);
 
 module.exports = {
-  Cv,
+  Resume,
 };

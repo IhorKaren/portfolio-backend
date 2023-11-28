@@ -1,9 +1,9 @@
 const express = require("express");
 
-const ctrl = require("../../controllers/cv");
+const ctrl = require("../../controllers/resume");
 
 const router = express.Router();
 
-router.get("/", ctrl.getActualCv);
+router.get("/", ctrl.getActualResume);
 
 module.exports = router;
