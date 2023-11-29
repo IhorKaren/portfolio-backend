@@ -1,7 +1,6 @@
-const { ctrlWrapper } = require("../../helpers");
+import ctrlWrapper from "../../helpers/ctrlWrapper.js";
+import getAllProjects from "./getAllProjects.js";
 
-const { getAllProjects } = require("./getAllProjects");
-
-module.exports = {
+export default {
   getAllProjects: ctrlWrapper(getAllProjects),
 };

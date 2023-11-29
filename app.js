@@ -1,11 +1,8 @@
-const express = require("express");
-const logger = require("morgan");
-const cors = require("cors");
-
-require("dotenv").config();
-
-const projectsRouter = require("./routes/api/projectsRouter");
-const resumeRouter = require("./routes/api/resumeRouter");
+import express from "express";
+import logger from "morgan";
+import cors from "cors";
+import projectsouter from "./routes/api/projectsRouter.js";
+import messagesRouter from './routes/api/messagesRouter.js'
 
 const app = express();
 
@@ -14,9 +11,10 @@ const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
+app.use(express.static("public"));
 
-app.use("/projects", projectsRouter);
-app.use("/cv", resumeRouter);
+app.use("/projects", projectsouter);
+app.use("/message", messagesRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });
@@ -28,4 +26,4 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-module.exports = app;
+export default app;

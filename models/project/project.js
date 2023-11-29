@@ -1,6 +1,5 @@
-const { Schema, model } = require("mongoose");
-
-const { handleMongooseError } = require("../../helpers");
+import { Schema, model } from "mongoose";
+import { handleMongooseError } from "../../helpers/index.js";
 
 const projectSchema = new Schema(
   {
@@ -43,6 +42,4 @@ projectSchema.post("save", handleMongooseError);
 
 const Project = model("project", projectSchema);
 
-module.exports = {
-  Project,
-};
+export default Project;
