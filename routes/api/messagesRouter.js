@@ -6,7 +6,7 @@ import { schemas } from "../../models/message/message.js";
 const messagesRouter = express.Router();
 
 messagesRouter.post(
-  "/:token",
+  "/",
   validateBody(schemas.addMessage),
   ctrl.sendMessage
 );
