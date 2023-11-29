@@ -5,6 +5,6 @@ import {schemas} from "../../models/message/message.js";
 
 const messagesRouter = express.Router();
 
-messagesRouter.post("/webhook", validateBody(schemas.addMessage), ctrl.sendMessage);
+messagesRouter.post("/", validateBody(schemas.addMessage), ctrl.sendMessage);
 
 export default messagesRouter;

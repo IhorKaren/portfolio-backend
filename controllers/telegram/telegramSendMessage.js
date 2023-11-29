@@ -7,7 +7,7 @@ dotenv.config();
 const { TELEGRAM_BOT_TOKEN, URL } = process.env;
 
 const bot = new TelegramBot(TELEGRAM_BOT_TOKEN);
-bot.setWebHook(`${URL}/webhook`);
+bot.setWebHook(`${URL}/message`);
 
 const sendMessage = async (req, res) => {
   const { name, email, text } = req.body;
