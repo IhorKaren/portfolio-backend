@@ -7,14 +7,12 @@ dotenv.config();
 const { TELEGRAM_BOT_TOKEN, URL } = process.env;
 
 const bot = new TelegramBot(TELEGRAM_BOT_TOKEN);
-bot.setWebHook(`${URL}/message`);
+bot.setWebHook(`https://portfolio-backend-five-eta.vercel.app/message/${TELEGRAM_BOT_TOKEN}`);
 
 const sendMessage = async (req, res) => {
   const { name, email, text } = req.body;
 
   const newMessage = await Message.create({ ...req.body });
-
-  bot.processUpdate();
 
   bot.on("message", (msg) => {
     const {
