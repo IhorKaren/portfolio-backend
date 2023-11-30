@@ -18,6 +18,10 @@ const projectSchema = new Schema(
       type: String,
       required: true,
     },
+    info: {
+      type: String,
+      required: true,
+    },
     tags: {
       type: [String],
       enum: [
